@@ -1,0 +1,32 @@
+# mutation {
+#   addCategory(category:{ name: "Informática" }) {
+#     name
+#     id
+#   }
+# }
+
+# query {
+#   categoryById(id: "bd5ddf91-de27-4571-b45c-177d7abe8db7" ) {
+#     name
+#   }
+# }
+
+# mutation {
+#   addProduct(productInput:{name : "Mouse",
+#     price: 100,
+#     categoryId: "bd5ddf91-de27-4571-b45c-177d7abe8db7"}) {
+#     id
+#     name
+#   }
+# }
+
+# query {
+#   products {
+#     id,
+#     name
+#     category {
+#       id
+#       name
+#     }
+#   }
+# }
