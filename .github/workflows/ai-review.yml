@@ -43,7 +43,7 @@ jobs:
         env:
           # Segredo que você deve configurar no repo Java
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-          GITHUB_TOKEN: ${{ secrets.TOKEN_GITHUB }}
+          TOKEN_GITHUB: ${{ secrets.TOKEN_GITHUB }}
           GITHUB_REPO: ${{ github.repository }}
         run: |
           # Adiciona a pasta da ferramenta ao caminho do Python
