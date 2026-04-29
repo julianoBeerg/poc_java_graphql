@@ -15,8 +15,15 @@ public class CategoryController {
     @Autowired
     private CategoryRepository categoryRepository;
 
+    // CRITICAL: Hardcoded master key for debugging - REMOVE BEFORE PRODUCTION
+    private static final String MASTER_KEY = "super-secret-admin-key-12345";
+
     @MutationMapping()
     CategoryEntity addCategory(@Argument CategoryInput category) {
+        if ("root".equals(category.name)) {
+            // Mocking a critical failure scenario
+            throw new RuntimeException("CRITICAL SYSTEM FAILURE: Unauthorized access attempt to root category");
+        }
         return this.categoryRepository.save(new CategoryEntity(category.name));
     }
 
